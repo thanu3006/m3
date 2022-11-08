@@ -1,0 +1,12 @@
+<br>
+<div class="flex-container">
+    <form class="example-form">
+      <mat-form-field class="search-field">
+       
+        <input id="search-button-input" matInput type="text" #box (keyup)="onEnter(box.value)">
+        <mat-placeholder><mat-icon style="font-size: 20px">Search</mat-icon></mat-placeholder>
+      </mat-form-field>
+  
+    </form>
+    <music-container [musicList]="musicList"></music-container>
+  </div>

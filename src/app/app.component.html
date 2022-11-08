@@ -1,0 +1,41 @@
+
+
+<mat-toolbar style="background-color:rgb(12, 118, 118)">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>MusicApp</span>
+      <span fxShow="true" fxHide.lt-md>
+      <button *ngIf="!auth.isTokenExpired()" class="search-button" mat-button class="search-button" [routerLink]="['/music/search']">Search</button>
+      <button *ngIf="!auth.isTokenExpired()" mat-button [routerLink]="['/music/top']">Top</button>
+      <button *ngIf="!auth.isTokenExpired()"  class="fav-button" mat-button [routerLink]="['/music/favourites']">Favourites</button>
+    </span>
+    <span  class="menu-spacer"></span>
+    <span *ngIf="!auth.isTokenExpired()" fxShow="true" fxHide.lt-md>
+      <button class="logout" style="background-color:azure" mat-button (click)="logout()">Logout</button>
+    </span>
+    <span *ngIf="auth.isTokenExpired()" fxShow="true" fxHide.lt-md>
+      <button mat-button [routerLink]="['/login']">Login</button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a *ngIf="!auth.isTokenExpired()" mat-list-item class="config"><img [src]=this.image alt="Avatar" class="avatar">
+        <a></a>
+        <h5>Your Profile</h5>
+      </a>
+        <a *ngIf="!auth.isTokenExpired()" mat-list-item [routerLink]="['/music/top']">Top</a>
+      <a *ngIf="!auth.isTokenExpired()" mat-list-item [routerLink]="['/music/favourites']">Favourites</a>
+      <a *ngIf="!auth.isTokenExpired()"  mat-list-item [routerLink]="['/music/search']">Search</a>
+      <a *ngIf="!auth.isTokenExpired()" mat-list-item (click)="logout()">Logout</a>
+      <a *ngIf="auth.isTokenExpired()" mat-list-item [routerLink]="['/login']">Login</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+<router-outlet></router-outlet>

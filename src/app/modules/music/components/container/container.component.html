@@ -1,0 +1,5 @@
+
+<div class="music-container" >
+    <music-thumnail *ngFor="let music of musicList" [favCheck]="favCheck" [music]="music" (addMusic)="addToFavouriteList($event)" (deleteMusic)='deleteMusic($event)'></music-thumnail>
+  </div>
+  

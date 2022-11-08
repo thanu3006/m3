@@ -1,0 +1,23 @@
+
+<mat-card class="music-card" style="background-color:rgba(153, 226, 235, 0.564)">
+    <mat-card-header>
+        <mat-card-title class="music-title">{{music?.name}}</mat-card-title>
+        <mat-card-subtitle >{{music?.artistName}}</mat-card-subtitle>
+    </mat-card-header>
+    <audio controls muted>
+        <source src="{{music?.previewURL}}" type="audio/ogg">
+        <source src="{{music?.previewURL}}" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio><br>
+    <!-- <img mat-card-image class="music-image" [src]="music?.urlToImage" [alt]=""/> -->
+    <!-- <mat-card-content class="music-overview">
+        {{music?.description}}
+    </mat-card-content> -->
+    <mat-card-actions class="music-actions"> 
+       
+        <!-- <a color="primary" href={{music?.url}}>Read more...</a> -->
+        <button *ngIf="!favCheck" class="add-button" mat-raised-button style="background-color:#f7f7f7"  (click)="addToFavouriteList()">Add to favourites</button>
+        <button *ngIf="favCheck" class="delete-button" mat-raised-button color="warn"  (click)="deleteMusicFav()">Delete</button>
+    <!-- </mat-card-actions> -->
+  <!-- </mat-card> -->
+  

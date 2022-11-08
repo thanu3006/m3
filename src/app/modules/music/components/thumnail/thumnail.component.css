@@ -1,0 +1,40 @@
+.music-thumbnail{
+    width : 300px;
+    margin : 20px;
+}
+
+.music-image{
+    height: 450px;
+
+}
+
+.music-card{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 60px;
+    width : 350px;
+    height : 40vh
+}
+.music-overview{
+    height:80px;
+    overflow-x:hidden;
+    overflow-y: auto;
+    justify-content: musicpaper;
+}
+
+.music-title{
+    width : 300px; 
+    height : 100px;
+    overflow-x: hidden;
+}
+
+.music-overview::-webkit-scrollbar{
+    width:2px;
+    background: gray;
+}
+
+#add-button, #delete-button
+{
+    float : right;
+}
